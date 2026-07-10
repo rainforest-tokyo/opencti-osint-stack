@@ -155,7 +155,7 @@ services:
     restart: always
     profiles:
     - xtm
-    platform: ${DOCKER_DEFAULT_PLATFORM:-linux/arm64}
+    platform: linux/amd64
   opencti:
     image: opencti/platform:${OPENCTI_VERSION:-latest}
     environment:
@@ -430,7 +430,7 @@ services:
       start_period: 60s
     profiles:
     - xtm
-    platform: ${DOCKER_DEFAULT_PLATFORM:-linux/arm64}
+    platform: linux/amd64
   xtm-one-worker:
     image: xtmone/worker:latest
     environment:
@@ -455,7 +455,7 @@ services:
     restart: always
     profiles:
     - xtm
-    platform: ${DOCKER_DEFAULT_PLATFORM:-linux/arm64}
+    platform: linux/amd64
   connector-cisa-known-exploited-vulnerabilities:
     image: opencti/connector-cisa-known-exploited-vulnerabilities:${OPENCTI_CONNECTOR_VERSION:-latest}
     environment:
@@ -696,7 +696,7 @@ services:
       CONNECTOR_AUTO: 'false'
       SENDA_NEXUS_API_BASE_URL: ${SENDA_NEXUS_API_BASE_URL:-https://nexus.senda-lab.jp/api}
       SENDA_NEXUS_API_TOKEN: ${SENDA_NEXUS_API_TOKEN}
-      SENDA_NEXUS_API_DAYS: 1
+      SENDA_NEXUS_API_DAYS: 30
       SENDA_NEXUS_TLP: TLP:AMBER
       SENDA_NEXUS_CREATED_BY: Senda-Nexus
       SENDA_NEXUS_CONFIDENCE_LEVEL: 100
@@ -721,7 +721,7 @@ services:
       CONNECTOR_AUTO: 'false'
       SENDA_NEXUS_API_BASE_URL: ${SENDA_NEXUS_API_BASE_URL:-https://nexus.senda-lab.jp/api}
       SENDA_NEXUS_API_TOKEN: ${SENDA_NEXUS_API_TOKEN}
-      SENDA_NEXUS_API_DAYS: 7
+      SENDA_NEXUS_API_DAYS: 30
       SENDA_NEXUS_TLP: TLP:AMBER
       SENDA_NEXUS_CREATED_BY: Senda-Nexus
       SENDA_NEXUS_CONFIDENCE_LEVEL: 100
